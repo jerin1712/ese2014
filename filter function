@@ -1,0 +1,10 @@
+3.	If the input to the system is x(n)=[5+3cos(0.2pi*n)+4sin(0.6pi*n)]u(n), determine the response y(n) over 0<=n<=200 using the filter function
+
+CODE:
+
+ b = [1,2,0,1];
+  a = [1,-0.5,0.25];
+ n = 0:200;
+ x = 5*ones(size(n))+3*cos(0.2*pi*n)+4*sin(0.6*pi*n);
+ y = filter(b,a,x);
+ subplot(2,1,2); stem(n,y); title('Response Plot'); xlabel('n'); ylabel('y(n)');
