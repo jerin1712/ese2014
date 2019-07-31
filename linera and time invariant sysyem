@@ -1,0 +1,12 @@
+A linear and time-invariant system is described by the difference equation.
+y(n)-0.5y(n-1)+0.25y(n-2)=x(n)+2x(n-1)+x(n-3)
+
+1.	Using the filter function, compute and plot the impulse response of the system over 0<=n<=100
+
+CODE:
+b = [1,2,0,1];
+ a = [1,-0.5,0.25];
+ [x,n] = impseq(0,0,100);
+h = filter(b,a,x);
+subplot(2,1,2); stem(n,h); title('Impulse Response');
+ xlabel('n'); ylabel('h(n)');
